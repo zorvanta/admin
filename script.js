@@ -11,7 +11,7 @@ window.onload = function() {
     // Function to handle the end of the countdown
     function endCountdown() {
         clearInterval(countdownInterval);
-        timerDisplay.textContent = "Time's up!";
+        timerDisplay.textContent = "!!";
         // You can add more actions here when the timer reaches zero
     }
 
