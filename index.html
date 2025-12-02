@@ -1,18 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-   <meta http-equiv="refresh" content="5; url=http://quiz-120.github.io/monkeygg2">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDIRECTING...</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Login Page</title>
+    <style>
+        /* Basic CSS for styling and initial hidden content */
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f0f0f0; }
+        .login-container { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+        .hidden-content { display: none; /* Initially hide the content */ }
+        .blurred-content { filter: blur(5px); /* Apply blur effect */ }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .error-message { color: red; margin-top: 10px; }
+    </style>
 </head>
 <body>
-    <h1>Bringing You To Monkeygg2 In <div id="timer-display">5</div>
- 
+    <div class="login-container" id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="authenticate()">Login</button>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
 
-  
+    <div class="hidden-content" id="protectedPage">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zorvanta Admin</title>
 
-    <script src="script.js"></script> 
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0c2e66;
+        text-align: center;
+        color: white;
+    }
+
+    /* Header Bar */
+    .topbar {
+        width: 100%;
+        background: white;
+        color: black;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    /* Logo + ZORVANTA */
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .left img {
+        height: 50px;
+    }
+
+    .admin {
+        font-size: 26px;
+        font-family: "Brush Script MT", cursive;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    /* Vertical Divider */
+    .divider {
+        width: 5px;
+        background: black;
+        height: 60px;
+        margin: 0 30px;
+    }
+
+    /* Home link */
+    .home a {
+        font-size: 40px;
+        font-weight: 800;
+        font-family: "Marker Felt", "Comic Sans MS", cursive;
+        color: black;
+        text-decoration: none;
+    }
+
+    .home a:hover {
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+
+    /* Panel Coming Soon */
+    .main {
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: linear-gradient(#184b95, #0c2e66);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 70px;
+        font-family: "Comic Sans MS", cursive;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+
+    <div class="left">
+        <img src="https://ik.imagekit.io/l7uslhlci/IMG_3478.png" alt="Logo">
+        ZORVANTA
+        <span class="admin">Admin</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Home now links to zorvanta.github.io -->
+    <div class="home">
+        <a href="http://zorvanta.github.io/">Home</a>
+    </div>
+</div>
+
+<!-- MAIN SECTION -->
+<div class="main">
+    Panel Coming Soon
+</div>
+
+</body>
+</html>
+
+    </div>
+
+    <script>
+        function authenticate() {
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loginForm = document.getElementById('loginForm');
+            const protectedPage = document.getElementById('protectedPage');
+
+            // Client-side validation (for demonstration, replace with server-side for real applications)
+            if (usernameInput === 'zorvanta' && passwordInput === 'admin') {
+                errorMessage.textContent = ''; // Clear any previous error
+                loginForm.style.display = 'none'; // Hide login form
+                protectedPage.style.display = 'block'; // Show protected content
+                // Optionally remove blur if applied initially to the whole page
+                document.body.classList.remove('blurred-content'); 
+            } else {
+                errorMessage.textContent = 'Invalid username or password.';
+                // Redirect on incorrect credentials
+                // window.location.href = 'https://example.com/error-page.html'; 
+            }
+        }
+
+        // Optional: Apply blur to the body initially if you want to unblur it later
+        // document.body.classList.add('blurred-content'); 
+    </script>
 </body>
 </html>
